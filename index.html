@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Snake 3D - Gemini Space Game</title>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <div id="game-container"></div>
+
+  <div id="ui-layer">
+    <header>
+      <div class="title-box">
+        <h1>Snake 3D</h1>
+        <div class="mode-selector">
+          <button id="mode-1p-btn" class="mode-btn active" title="Одиночная игра">👤 1 Игрок</button>
+          <button id="mode-2p-btn" class="mode-btn" title="Дуэль для двоих">👥 2 Игрока</button>
+        </div>
+      </div>
+      <div class="scoreboard">
+        <div id="score-card-1p" class="score-card">
+          <div class="label">Score</div>
+          <div id="current-score" class="val">0</div>
+        </div>
+        <div id="score-card-p1" class="score-card p1-card" style="display: none;">
+          <div class="label">P1 (WASD)</div>
+          <div id="p1-score" class="val">0</div>
+        </div>
+        <div id="score-card-p2" class="score-card p2-card" style="display: none;">
+          <div class="label">P2 (Стрелки)</div>
+          <div id="p2-score" class="val">0</div>
+        </div>
+        <div class="score-card">
+          <div class="label">Speed</div>
+          <div id="current-speed" class="val">1.0x</div>
+        </div>
+        <div id="score-card-best" class="score-card">
+          <div class="label">Best</div>
+          <div id="best-score" class="val">0</div>
+        </div>
+        <button id="cam-toggle-btn" class="cam-btn" title="Нажмите C для переключения">📷 3D (C)</button>
+      </div>
+    </header>
+
+    <div class="mobile-dpad">
+      <button class="dpad-btn dpad-up" id="btn-up">▲</button>
+      <button class="dpad-btn dpad-left" id="btn-left">◀</button>
+      <button class="dpad-btn dpad-down" id="btn-down">▼</button>
+      <button class="dpad-btn dpad-right" id="btn-right">▶</button>
+    </div>
+
+    <div class="controls-hint">
+      WASD / Стрелки &bull; Пробел: Пауза &bull; C: Сменить камеру (3D / Сверху / FPS) &bull; R: Заново
+    </div>
+  </div>
+
+  <div id="pause-overlay" class="overlay">
+    <div class="modal-content">
+      <h2 style="color: #00f0ff;">⏸ ПАУЗА</h2>
+      <p style="margin-bottom: 0;">Нажмите <strong>Пробел</strong>, чтобы продолжить</p>
+    </div>
+  </div>
+
+  <div id="game-over-modal" class="overlay">
+    <div class="modal-content">
+      <h2 id="modal-title">Game Over</h2>
+      <p id="modal-subtitle">You crashed into a wall or yourself!</p>
+      <p>Final Score: <strong id="modal-score" style="color: #00f0ff; font-size: 1.4rem;">0</strong></p>
+      <button id="restart-btn" class="primary-btn">Play Again (R)</button>
+    </div>
+  </div>
+
+  <script type="module" src="./src/main.js"></script>
+</body>
+</html>
